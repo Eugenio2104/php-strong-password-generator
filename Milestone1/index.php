@@ -14,23 +14,54 @@ Scriviamo tutto (logica e layout) in un unico file index.php
 e unire questi array -->
 
 
-
-
-<?php
-
-$characters = [
-
-  'letters' => [
+<!-- 'letters' => [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l', 'm',
   ],
 
   'numbers' => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 
-  'symbols' => ['!', '?', '&', '%', '$', '<', '>', '^', '+', '-', '*', '/', '(', ')', '[', ']', '{', '}', '@', '#', '_', '='],
+  'symbols' => ['!', '?', '&', '%', '$', '<', '>', '^', '+', '-', '*', '/', '(', ')', '[', ']', '{', '}', '@', '#', '_', '='], -->
+
+<?php
 
 
-]
 
+$letters = [
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l', 'm',
+];
+
+$numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+$symbols = ['!', '?', '&', '%', '$', '<', '>', '^', '+', '-', '*', '/', '(', ')', '[', ']', '{', '}', '@', '#', '_', '='];
+
+
+$result = array_merge($letters, $numbers, $symbols);
+
+var_dump($result);
+
+
+/**
+ * function nomeFunzione(par1)){
+ *  for ($i = 0; $i < $par1; $i++) {
+ *  }
+ * }
+ * 
+ *   nomeFunzione(valore)
+ *
+ */
+
+
+function pswGenereted()
+{
+  $pass = '';
+  for ($i = 0; $i < $_GET['characters']; $i++) {
+    // rand(0, count($result))
+    $pass .= $result[rand(0, count($result))];
+  }
+}
+
+
+pswGenereted($_GET['characters'])
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +81,7 @@ $characters = [
     <div class="row">
       <form method="GET">
         <div class="form-group my-5">
-          <input type="text" name="characters" class="form-control" placeholder="Numero caratteri password">
+          <input type="number" name="characters" class="form-control" placeholder="Numero caratteri password">
         </div>
         <button type="submit" class="btn btn-danger">Genera password</button>
       </form>
