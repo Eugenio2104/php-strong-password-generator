@@ -4,10 +4,49 @@ L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle
 Milestone 1
 Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli (!?&%$<>^+-*/()[]{}@#_=)) da restituire all’utente.
 Scriviamo tutto (logica e layout) in un unico file index.php
-Milestone 2
-Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
-Milestone 3
-Invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che tramite $_SESSION recupererà la password da mostrare all’utente.
-Milestone 4 (BONUS)
-Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
-Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
+ -->
+
+
+
+
+
+<!-- passaggio 1: creare array diversi con i vari caratteri a seconda che siano lettere, maiuscole, numeri, simboli.
+e unire questi array -->
+
+
+
+
+<?php
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous' />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <form>
+        <div class="form-group my-5">
+          <input type="text" class="form-control" placeholder="Genera password">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
