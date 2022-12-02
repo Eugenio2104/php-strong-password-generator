@@ -18,6 +18,18 @@ e unire questi array -->
 
 <?php
 
+$characters = [
+
+  'letters' => [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l', 'm',
+  ],
+
+  'numbers' => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+
+  'symbols' => ['!', '?', '&', '%', '$', '<', '>', '^', '+', '-', '*', '/', '(', ')', '[', ']', '{', '}', '@', '#', '_', '='],
+
+
+]
 
 ?>
 
@@ -36,12 +48,11 @@ e unire questi array -->
 
   <div class="container">
     <div class="row">
-      <form>
+      <form method="GET">
         <div class="form-group my-5">
-          <input type="text" class="form-control" placeholder="Genera password">
-          <small id="emailHelp" class="form-text text-muted"></small>
+          <input type="text" name="characters" class="form-control" placeholder="Numero caratteri password">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-danger">Genera password</button>
       </form>
     </div>
   </div>
